@@ -24,7 +24,7 @@ services:
     image: phpmyadmin:latest
     container_name: website_php
     ports:
-      - "1002:80"
+      - "1001:80"
     environment:
       PMA_HOST: website_db
       MYSQL_ROOT_PASSWORD: "123"
