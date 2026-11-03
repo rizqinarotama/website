@@ -7,7 +7,7 @@ services:
     ports:
       - "1000:8080"
     volumes:
-      - .:/var/www/html
+      - ./website:/var/www/html
     restart: always
 
   website_db:
