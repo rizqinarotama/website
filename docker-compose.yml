@@ -29,3 +29,18 @@ services:
       PMA_HOST: website_db
       MYSQL_ROOT_PASSWORD: "123"
     restart: always
+      website_sync:
+    image: alpine/git:latest
+    container_name: website_sync
+    entrypoint: /bin/sh
+    command:
+      - -c
+      - |
+        git config --global --add safe.directory /repo
+        while true; do
+          git -C /repo pull origin main
+          sleep 60
+        done
+    volumes:
+      - /srv/website:/repo
+    restart: always
