@@ -29,7 +29,8 @@ services:
       PMA_HOST: website_db
       MYSQL_ROOT_PASSWORD: "123"
     restart: always
-      website_sync:
+    
+  website_sync:
     image: alpine/git:latest
     container_name: website_sync
     entrypoint: /bin/sh
